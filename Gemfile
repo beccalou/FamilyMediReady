@@ -1,4 +1,4 @@
-dotsource 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
