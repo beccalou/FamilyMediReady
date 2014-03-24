@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FamilyMediReady::Application.config.secret_key_base = 'dfe5d7bb5d247613c2c01a147949bcd67250561f92c2f0923f94bf1d706b7db7b80b786f1273814fdd6af8f6029ff5de094470e26745e03e056ac0ce6834e0e4'
+FamilyMediReady::Application.config.secret_key_base = '5fb97dbe6e12255dc2d75509fd0bf6fbb0745bcbc8255226181c088f7a0099f22730c817f96869ed5e2578af3ff27d2abc505f4b57ae58c6c231a60c2d713d8f'
