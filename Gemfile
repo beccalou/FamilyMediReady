@@ -38,6 +38,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
