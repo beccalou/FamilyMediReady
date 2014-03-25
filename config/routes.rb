@@ -1,12 +1,11 @@
 FamilyMediReady::Application.routes.draw do
-  get "people/index"
-  get "people/new"
-  get "people/create"
-  get "people/show"
-  get "people/update"
-  get "people/destroy"
   devise_for :users
-  resources :people
+
+  resources :users do
+    resources :people do
+    resources :medical_history
+  end
+  end
 
   devise_scope :user do
     root :to => "devise/sessions#new"
