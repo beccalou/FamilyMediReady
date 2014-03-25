@@ -4,7 +4,7 @@ class MedicalHistoriesController < ApplicationController
 
   def new
     @user = current_user
-    @person = Person.find(params[id])
+    @person = Person.where(params[:id])
   end
 
   def create
