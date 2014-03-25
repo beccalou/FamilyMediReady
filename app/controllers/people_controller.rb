@@ -3,6 +3,7 @@ class PeopleController < ApplicationController
   end
 
   def new
+    @person = People.new
   end
 
   def create
