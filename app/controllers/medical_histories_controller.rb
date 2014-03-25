@@ -3,6 +3,8 @@ class MedicalHistoriesController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @person = Person.find(params[id])
   end
 
   def create
