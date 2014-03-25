@@ -1,2 +1,14 @@
-<h1>People#new</h1>
-<p>Find me in app/views/people/new.html.erb</p>
+<h1>Medical History</h1>
+
+<%= form_for [@person] do |f| %>
+
+  <div>
+    <%= f.label :first_name, :placeholder 'First Name' %>
+    <%= f.label :last_name, :placeholder 'Last Name' %>
+    <%= f.label :gender, :placeholder 'Gender' %>
+    <%= f.date_field :birthday, :placeholder 'Birthday' %>
+    <%= f.check_box :living %>
+    <!-- <%= f.hidden_field :user_id, value: current_user.id %> -->
+  </div>
+  <%= f.submit %>
+<% end %>
