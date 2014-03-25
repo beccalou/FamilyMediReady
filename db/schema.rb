@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325173840) do
+ActiveRecord::Schema.define(version: 20140325205856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,35 @@ ActiveRecord::Schema.define(version: 20140325173840) do
 
   add_index "families", ["child_id"], name: "index_families_on_child_id", using: :btree
   add_index "families", ["parent_id"], name: "index_families_on_parent_id", using: :btree
+
+  create_table "medical_histories", force: true do |t|
+    t.boolean  "arthritis"
+    t.boolean  "birth_defects"
+    t.boolean  "asthma"
+    t.boolean  "depression"
+    t.boolean  "diabetes"
+    t.boolean  "cancer"
+    t.text     "cancer_type"
+    t.boolean  "hearing_loss"
+    t.boolean  "heart_disease"
+    t.boolean  "vision_problems"
+    t.boolean  "high_cholesterol"
+    t.boolean  "high_blood_pressure"
+    t.boolean  "infertility"
+    t.boolean  "mental_retardation"
+    t.boolean  "obesity"
+    t.boolean  "osteoporosis"
+    t.boolean  "stroke"
+    t.boolean  "vision_loss"
+    t.text     "allergic_to"
+    t.text     "past_meds"
+    t.text     "current_meds"
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "medical_histories", ["person_id"], name: "index_medical_histories_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
     t.text     "first_name"

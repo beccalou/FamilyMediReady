@@ -1,0 +1,9 @@
+<h1>something show please</h1>
+
+<p><%= @user.email %></p>
+<!-- <p>@user.mother</p>
+<p>@user.father</p> -->
+
+<ul>
+  <li><%= link_to 'Add family members', new_user_person_path(current_user.id) %></li>
+</ul>
