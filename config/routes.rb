@@ -1,4 +1,10 @@
 FamilyMediReady::Application.routes.draw do
+  get "families/index"
+  get "families/new"
+  get "families/create"
+  get "families/show"
+  get "families/update"
+  get "families/destroy"
   get "family/index"
   get "family/new"
   get "family/create"
