@@ -1,2 +1,49 @@
-<h1>MedicalHistories#new</h1>
-<p>Find me in app/views/medical_histories/new.html.erb</p>
+<h1>MedicalHistories</h1>
+
+<%= form_for [@user, @person] do |f| %>
+
+  <div>
+    <%= f.label "Arthritis" %>
+    <%= f.check_box :arthritis %>
+    <%= f.label "Birth Defects" %>
+    <%= f.check_box :birth_defects %>
+    <%= f.label "Depression" %>
+    <%= f.check_box :depression %>
+    <%= f.label "Diabetes" %>
+    <%= f.check_box :diabetes %>
+    <%= f.label "Cancer" %>
+    <%= f.check_box :cancer %>
+    <%= f.label "Cancer Type, if any" %>
+    <%= f.text :cancer_type %>
+    <%= f.label "Hearing Loss" %>
+    <%= f.check_box :hearing_loss %>
+    <%= f.label "Heart Disease" %>
+    <%= f.check_box :heart_disease %>
+    <%= f.label "Vision Problems" %>
+    <%= f.check_box :vision_problems %>
+    <%= f.label "High Cholesterol" %>
+    <%= f.check_box :high_cholesterol %>
+    <%= f.label "High Blood Pressure" %>
+    <%= f.check_box :high_blood_pressure %>
+    <%= f.label "Infertility" %>
+    <%= f.check_box :infertility %>
+    <%= f.label "Mental Retardation" %>
+    <%= f.check_box :mental_retardation %>
+    <%= f.label "Obesity" %>
+    <%= f.check_box :obesity %>
+    <%= f.label "Osteoporosis" %>
+    <%= f.check_box :osteoporosis %>
+    <%= f.label "Stroke" %>
+    <%= f.check_box :stoke %>
+    <%= f.label "Vision Loss" %>
+    <%= f.check_box :vision_loss %>
+    <%= f.label "Allergies" %>
+    <%= f.text :allergic_to %>
+    <%= f.label "Past Medication" %>
+    <%= f.check_box :past_meds %>
+    <%= f.label "Current Medications" %>
+    <%= f.text :current_meds %>
+    <%= f.hidden_field :person_id, value: current_user.person.id %>
+  </div>
+  <%= f.submit "Add Medical History" %>
+<% end %>
