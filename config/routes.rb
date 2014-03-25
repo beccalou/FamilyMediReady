@@ -1,16 +1,16 @@
 FamilyMediReady::Application.routes.draw do
-  get "families/index"
-  get "families/new"
-  get "families/create"
-  get "families/show"
-  get "families/update"
-  get "families/destroy"
-  get "family/index"
-  get "family/new"
-  get "family/create"
-  get "family/show"
-  get "family/update"
-  get "family/destroy"
+  # get "families/index"
+  # get "families/new"
+  # get "families/create"
+  # get "families/show"
+  # get "families/update"
+  # get "families/destroy"
+  # get "family/index"
+  # get "family/new"
+  # get "family/create"
+  # get "family/show"
+  # get "family/update"
+  # get "family/destroy"
   devise_for :users
 
   resources :users do
