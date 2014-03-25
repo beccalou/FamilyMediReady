@@ -1,6 +1,6 @@
-<h1>Medical History</h1>
+<h1>Add a Family Member</h1>
 
-<%= form_for @person do |f| %>
+<%= form_for [@user, @person] do |f| %>
 
   <div>
     <%= f.label "First Name" %>
@@ -13,7 +13,7 @@
     <%= f.date_field :birthday %>
     <%= f.label "Living?" %>
     <%= f.check_box :living %>
-    <!-- <%= f.hidden_field :user_id, value: current_user.id %> -->
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
   <%= f.submit "Add to family" %>
 <% end %>
