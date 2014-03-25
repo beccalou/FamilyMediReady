@@ -1,4 +1,10 @@
 FamilyMediReady::Application.routes.draw do
+  get "people/index"
+  get "people/new"
+  get "people/create"
+  get "people/show"
+  get "people/update"
+  get "people/destroy"
   devise_for :users
   resources :people
 
