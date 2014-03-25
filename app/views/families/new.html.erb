@@ -1,2 +1,13 @@
-<h1>Families#new</h1>
-<p>Find me in app/views/families/new.html.erb</p>
+<h1>Add Family Relationship</h1>
+
+<%= form_for [@person, @person_id] do |f| %>
+
+  <div>
+    <%= f.label "Who is this family member's biological mother" %>
+    <%= f.text_field :parent_role %>
+    <%= f.label "Who is this family member's biological father" %>
+    <%= f.text_field :parent_role %>
+
+  </div>
+  <%= f.submit "Add to family" %>
+<% end %>
