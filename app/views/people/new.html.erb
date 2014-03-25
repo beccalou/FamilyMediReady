@@ -1,14 +1,19 @@
 <h1>Medical History</h1>
 
-<%= form_for [@person] do |f| %>
+<%= form_for @person do |f| %>
 
   <div>
-    <%= f.label :first_name, :placeholder 'First Name' %>
-    <%= f.label :last_name, :placeholder 'Last Name' %>
-    <%= f.label :gender, :placeholder 'Gender' %>
-    <%= f.date_field :birthday, :placeholder 'Birthday' %>
+    <%= f.label "First Name" %>
+    <%= f.text_field :first_name %>
+    <%= f.label "Last Name" %>
+    <%= f.text_field :last_name %>
+    <%= f.label "Gender" %>
+    <%= f.text_field :gender %>
+    <%= f.label "Birthday" %>
+    <%= f.date_field :birthday %>
+    <%= f.label "Living?" %>
     <%= f.check_box :living %>
     <!-- <%= f.hidden_field :user_id, value: current_user.id %> -->
   </div>
-  <%= f.submit %>
+  <%= f.submit "Add to family" %>
 <% end %>
