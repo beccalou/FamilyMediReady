@@ -1,5 +1,6 @@
 FamilyMediReady::Application.routes.draw do
   devise_for :users
+  resources :people
 
   devise_scope :user do
     root :to => "devise/sessions#new"
