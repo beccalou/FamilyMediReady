@@ -4,6 +4,10 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'devise'
 
+gem 'pry-rails'
+
+gem 'protected_attributes'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
