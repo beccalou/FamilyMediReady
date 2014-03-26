@@ -1,10 +1,7 @@
 <h1>MedicalHistories</h1>
 
 
-<%= form_for [@user, @person] do |f| %>
-
-<%= f.collection_select(:person_id, @people, :id, :first_name, :last_name => "Please select a person...") %>
-
+<%= form_for [@user, @person, @medical_history] do |f| %>
 
   <div>
     <%= f.label "Arthritis" %>
@@ -18,7 +15,7 @@
     <%= f.label "Cancer" %>
     <%= f.check_box :cancer %>
     <%= f.label "Cancer Type, if any" %>
-    <%= f.text :cancer_type %>
+    <%= f.text_field :cancer_type %>
     <%= f.label "Hearing Loss" %>
     <%= f.check_box :hearing_loss %>
     <%= f.label "Heart Disease" %>
@@ -38,16 +35,15 @@
     <%= f.label "Osteoporosis" %>
     <%= f.check_box :osteoporosis %>
     <%= f.label "Stroke" %>
-    <%= f.check_box :stoke %>
+    <%= f.check_box :stroke %>
     <%= f.label "Vision Loss" %>
     <%= f.check_box :vision_loss %>
     <%= f.label "Allergies" %>
-    <%= f.text :allergic_to %>
+    <%= f.text_field :allergic_to %>
     <%= f.label "Past Medication" %>
     <%= f.check_box :past_meds %>
     <%= f.label "Current Medications" %>
-    <%= f.text :current_meds %>
-    <%= f.hidden_field :person_id, value: current_user.person.id %>
+    <%= f.text_field :current_meds %>
   </div>
   <%= f.submit "Add Medical History" %>
 <% end %>
