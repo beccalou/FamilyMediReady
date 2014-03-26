@@ -1,8 +1,20 @@
-<h1>something show please</h1>
+<h1>Your Family</h1>
 
 <p><%= @user.email %></p>
 <!-- <p>@user.mother</p>
 <p>@user.father</p> -->
+
+Current Person
+<h3> <%= current_user.this_person.last_name %></h3>
+
+People
+<% @people.each do |person| %>
+<ul>
+<li>First Name: <%= person.first_name %></li>
+<li>Last Name: <%= person.last_name %></li>
+<li><%= link_to "Show", user_person_path(current_user, person)%></li>
+</ul>
+<% end  %>
 
 <ul>
   <li><%= link_to 'Add family members', new_user_person_path(current_user.id) %></li>
