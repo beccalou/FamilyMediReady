@@ -12,7 +12,6 @@ class MedicalHistoriesController < ApplicationController
   end
 
   def create
-    binding.pry
     @medical_history = MedicalHistory.new(medical_history_params)
     # @medical_history.person_id = params[:person_id]
 
