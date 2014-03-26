@@ -1,8 +1,2 @@
-<h1>Add a Family Member's Medical History</h1>
+<h1>Medical History</h1>
 
-<%= form_for [@person, @user] do |f| %>
-
-<%= collection_select(:person, :person_id, @people, :id, :full_name, {:prompt => true}) %>
-<%= f.submit value = "Add Medical History" %>
-
-<% end %>
