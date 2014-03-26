@@ -1,2 +1,9 @@
 <h1>People#show</h1>
 <p>Find me in app/views/people/show.html.erb</p>
+
+<%= form_for [@person, @user] do |f| %>
+
+<%= collection_select(:person, :person_id, @people, :id, :full_name, {:prompt => true}) %>
+<%= f.submit value = "Add Medical History" %>
+
+<% end %>
