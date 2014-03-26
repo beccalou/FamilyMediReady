@@ -1,10 +1,11 @@
 class MedicalHistoriesController < ApplicationController
+  before_filter :prepare_people
+
   def index
   end
 
   def new
     @user = current_user
-    @person = Person.where(params[:id])
   end
 
   def create
@@ -18,4 +19,11 @@ class MedicalHistoriesController < ApplicationController
 
   def destroy
   end
+
+    private
+
+    def prepare_people
+     @people = Person.all
+    end
+
 end
