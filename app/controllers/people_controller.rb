@@ -25,7 +25,8 @@ class PeopleController < ApplicationController
   end
 
   def show
-    # @people = current_user.people
+    @person = Person.find(params[:id])
+    @medical_history = @person.medical_history
     # @user = current_user
     # if @person.medical_history.id == nil
     #   "Add medical history"
