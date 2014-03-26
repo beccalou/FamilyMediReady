@@ -1,4 +1,4 @@
-<h1>Add a Family Member</h1>
+<h1><%= @for_user ? "Add your info" : "Add Family Member" %></h1>
 
 <%= form_for [@user, @person] do |f| %>
 
