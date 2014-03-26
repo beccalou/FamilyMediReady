@@ -3,11 +3,18 @@
 <%= form_for [@person, @person_id] do |f| %>
 
   <div>
-    <%= f.label "Who is this family member's biological mother" %>
+    <%= f.label "Biological mother" %>
     <%= f.text_field :parent_role %>
-    <%= f.label "Who is this family member's biological father" %>
+    <%= f.label "Biological father" %>
     <%= f.text_field :parent_role %>
 
   </div>
   <%= f.submit "Add to family" %>
 <% end %>
+
+<!-- @user = @user.current_user.id
+ -->
+<!-- @user = child_id
+@parent =
+@parent_role = comes from form drop down-- father or mother
+ -->
