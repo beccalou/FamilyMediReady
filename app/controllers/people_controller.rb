@@ -26,6 +26,10 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+    @user = current_user
+    if @person.medical_history == nil
+      redirect_to new_user_person_medical_history_path(current_user.id, @person.id)
+    else
     @medical_history = @person.medical_history
     # @user = current_user
     # if @person.medical_history.id == nil
@@ -34,6 +38,7 @@ class PeopleController < ApplicationController
   #   @user = current_user
   #   @medical_history = @person.medical_history
   #   end
+    end
   end
 
   def update
