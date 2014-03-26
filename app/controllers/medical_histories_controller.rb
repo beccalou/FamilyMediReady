@@ -1,5 +1,5 @@
 class MedicalHistoriesController < ApplicationController
-  before_action :get_person
+  # before_action :get_person, only: [:show]
 
   def index
     @medical_histories = MedicalHistory.includes(:person).all
@@ -42,9 +42,9 @@ class MedicalHistoriesController < ApplicationController
     params.require(:medical_history).permit(:arthritis, :birth_defects, :depression, :diabetes, :cancer, :cancer_type, :hearing_loss, :heart_disease, :vision_problems, :high_cholesterol, :high_blood_pressure, :infertility, :mental_retardation, :obesity, :osteoporosis, :stroke, :vision_loss, :allergic_to, :past_meds, :current_meds).merge({person_id: params[:person_id]})
   end
 
-  def get_person
-    @person = Person.find(params[:person_id])
-  end
+  # def get_person
+  #   @person = Person.find(params[:id])
+  # end
 
 
 end
