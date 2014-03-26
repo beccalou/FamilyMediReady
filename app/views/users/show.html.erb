@@ -12,10 +12,13 @@ People
 <ul>
 <li>First Name: <%= person.first_name %></li>
 <li>Last Name: <%= person.last_name %></li>
-<li><%= link_to "Show", user_person_path(current_user, person)%></li>
+<li><%= link_to 'Add Medical History', new_user_person_medical_history_path(@user, person) %></li>
+<li><%= link_to 'Show medical history', user_person_path(current_user.id, :person_id) %></li>
+
 </ul>
 <% end  %>
 
 <ul>
   <li><%= link_to 'Add family members', new_user_person_path(current_user.id) %></li>
+
 </ul>
