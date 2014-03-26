@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+
   def show
     @user = current_user
-    @mother = Family.where
-    @father = Family.where
+    @people = current_user.people
+   # @mother = Family.where
+   # @father = Family.where
     # @sister = Family.where
     # @brother = Family.where
     # @uncle = Family.where
