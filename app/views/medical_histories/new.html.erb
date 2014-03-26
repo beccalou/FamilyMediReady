@@ -1,6 +1,10 @@
 <h1>MedicalHistories</h1>
 
+
 <%= form_for [@user, @person] do |f| %>
+
+<%= f.collection_select(:person_id, @people, :id, :first_name, :last_name => "Please select a person...") %>
+
 
   <div>
     <%= f.label "Arthritis" %>
