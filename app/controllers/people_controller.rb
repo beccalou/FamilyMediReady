@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-          if @person.save
+      if @person.save
         flash[:notice] = 'You have a new family member!'
         redirect_to user_path(current_user.id)
       else
@@ -25,10 +25,15 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @people = current_user.people
-    @user = current_user
+    # @people = current_user.people
+    # @user = current_user
+    # if @person.medical_history.id == nil
+    #   "Add medical history"
+  #   # else
+  #   @user = current_user
+  #   @medical_history = @person.medical_history
+  #   end
   end
-
 
   def update
   end
