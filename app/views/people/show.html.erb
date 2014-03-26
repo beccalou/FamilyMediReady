@@ -4,7 +4,9 @@
     <% @medical_history.attributes.each do |k, v| %>
       <% if k != "id" && "person" %>
       <% if v != false %>
+      <% if v.blank? != true %>
         <li><%= k %> : <%= v %></li>
+    <% end %>
     <% end %>
     <% end %>
     <% end %>
