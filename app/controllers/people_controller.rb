@@ -43,6 +43,7 @@ class PeopleController < ApplicationController
 
   def edit
     @person = Person.find(params[:id])
+    @user = current_user
   end
 
   def update
