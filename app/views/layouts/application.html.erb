@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <div class ="container">
   <h3>
     <%if user_signed_in?%>
       <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, method: 'delete'%>
@@ -15,6 +17,7 @@
       <%= link_to 'Sign up', new_user_registration_path%>
     <%end%>
   </h3>
+  </div>
 
 <%= yield %>
 
