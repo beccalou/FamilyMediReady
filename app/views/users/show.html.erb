@@ -30,6 +30,7 @@ People
   </div>
   <li><%= link_to 'Add Medical History', new_user_person_medical_history_path(@user, person) %></li>
   <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
+  <li><%= link_to 'Edit Your Profile', edit_user_person_path(@user.id, person.id)%>
 </ul>
 <% end  %>
 
