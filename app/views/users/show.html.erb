@@ -5,13 +5,13 @@
 <p>@user.father</p> -->
 
 Current Person
-<h3> <%= current_user.this_person.last_name %></h3>
+<h3> <%= @user.this_person.last_name %></h3>
 
 People
-<% @people.each do |person| %>
+<% @user.people.each do |person| %>
 <ul>
-  <li>First Name: <%= person.first_name %></li>
-  <li>Last Name: <%= person.last_name %></li>
+  <li>First Name: <%= person.first_name.capitalize! %></li>
+  <li>Last Name: <%= person.last_name.capitalize %></li>
 
   <% if person.medical_history %>
     <div class="panel">
@@ -28,12 +28,23 @@ People
       <% end %>
     <% end %>
   </div>
-  <li><%= link_to 'Add Medical History', new_user_person_medical_history_path(@user, person) %></li>
-  <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
-  <li><%= link_to 'Edit Your Profile', edit_user_person_path(@user.id, person.id)%>
+
+    <li><%= link_to 'Edit Profile', edit_user_person_path(@user.id, person.id)%></li>
+
+    <% if person.medical_history.blank? %>
+      <li>
+        <%= link_to('Add Medical History', new_user_person_medical_history_path(@user, person) )%>
+      </li>
+    <% else %>
+      <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
+      <li><%= link_to 'Edit Medical History', edit_user_person_medical_history_path(@user, person.id,
+  person.medical_history.id)%></li>
+    <% end %>
+    <li><%= link_to 'Add a new relationship', new_user_person_family_path(@user, person.id) %> </li>
+
 </ul>
 <% end  %>
 
 <ul>
-  <li><%= link_to 'Add family members', new_user_person_path(current_user.id) %></li>
+  <li><%= link_to 'Add a new person', new_user_person_path(current_user.id) %></li>
 </ul>
