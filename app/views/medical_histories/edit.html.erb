@@ -1,0 +1,49 @@
+<h1>Update Medical History</h1>
+
+
+<%= form_for [@user, @person, @medical_history] do |f| %>
+
+  <div>
+    <%= f.label "Arthritis" %>
+    <%= f.check_box :arthritis %>
+    <%= f.label "Birth Defects" %>
+    <%= f.check_box :birth_defects %>
+    <%= f.label "Depression" %>
+    <%= f.check_box :depression %>
+    <%= f.label "Diabetes" %>
+    <%= f.check_box :diabetes %>
+    <%= f.label "Cancer" %>
+    <%= f.check_box :cancer %>
+    <%= f.label "Cancer Type, if any" %>
+    <%= f.text_field :cancer_type %>
+    <%= f.label "Hearing Loss" %>
+    <%= f.check_box :hearing_loss %>
+    <%= f.label "Heart Disease" %>
+    <%= f.check_box :heart_disease %>
+    <%= f.label "Vision Problems" %>
+    <%= f.check_box :vision_problems %>
+    <%= f.label "High Cholesterol" %>
+    <%= f.check_box :high_cholesterol %>
+    <%= f.label "High Blood Pressure" %>
+    <%= f.check_box :high_blood_pressure %>
+    <%= f.label "Infertility" %>
+    <%= f.check_box :infertility %>
+    <%= f.label "Mental Retardation" %>
+    <%= f.check_box :mental_retardation %>
+    <%= f.label "Obesity" %>
+    <%= f.check_box :obesity %>
+    <%= f.label "Osteoporosis" %>
+    <%= f.check_box :osteoporosis %>
+    <%= f.label "Stroke" %>
+    <%= f.check_box :stroke %>
+    <%= f.label "Vision Loss" %>
+    <%= f.check_box :vision_loss %>
+    <%= f.label "Allergies" %>
+    <%= f.text_field :allergic_to %>
+    <%= f.label "Past Medication" %>
+    <%= f.check_box :past_meds %>
+    <%= f.label "Current Medications" %>
+    <%= f.text_field :current_meds %>
+  </div>
+  <%= f.submit "Update" %>
+<% end %>
