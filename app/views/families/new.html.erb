@@ -1,20 +1,23 @@
-<h1>Add Family Relationship</h1>
+<h1>Add Family Relationship for <%= @person.full_name %> </h1>
 
-<%= form_for [@person, @person_id] do |f| %>
-
-  <div>
-    <%= f.label "Biological mother" %>
-    <%= f.text_field :parent_role %>
-    <%= f.label "Biological father" %>
-    <%= f.text_field :parent_role %>
-
-  </div>
-  <%= f.submit "Add to family" %>
+<%= form_for [@user, @person, @family] do |f| %>
+<%= radio_button_tag(:role, "parent_id") %>
+<%= label_tag(:role_parent, "Add a parent or") %>
+<%= radio_button_tag(:role, "child_id") %>
+<%= label_tag(:role_child, "Add a child") %>
+<%= f.submit "Create relationship" %>
 <% end %>
 
-<!-- @user = @user.current_user.id
- -->
-<!-- @user = child_id
-@parent =
-@parent_role = comes from form drop down-- father or mother
- -->
+
+<%= form_for [@user, @person, @family] do |f| %>
+<%= radio_button_tag(:parent_role, "parent_role") %>
+<%= label_tag(:role_parent, "Father or") %>
+<%= radio_button_tag(:parent_role, "parent_role") %>
+<%= label_tag(:parent_role, "Mother") %>
+<%= f.submit "Add parent role" %>
+<% end %>
+
+
+
+
+
