@@ -3,8 +3,8 @@ class Person < ActiveRecord::Base
   include ActiveModel::Conversion
   # attr_accessible :first_name, :last_name
   belongs_to :user
-  has_many :parents, :class_name => 'Family', :foreign_key => 'id'
-  has_many :children, :class_name => 'Family', :foreign_key => 'id'
+  has_many :parents, :class_name => 'Family', :foreign_key => 'parent_id'
+  has_many :children, :class_name => 'Family', :foreign_key => 'child_id'
   has_one :medical_history
 
   def full_name
