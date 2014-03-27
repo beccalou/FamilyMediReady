@@ -30,6 +30,12 @@ class MedicalHistoriesController < ApplicationController
     # @person = Person.find(params[:person_id])
   end
 
+  def edit
+    @medical_history = MedicalHistory.find(params[:id])
+    @person = Person.find(params[:person_id])
+    @user = current_user
+  end
+
   def update
   end
 
