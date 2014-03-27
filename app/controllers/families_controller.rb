@@ -6,6 +6,7 @@ class FamiliesController < ApplicationController
     @person = Person.find(params[:person_id])
     @user = current_user
     @family = Family.new
+    @people = current_user.people
   end
 
   def create
