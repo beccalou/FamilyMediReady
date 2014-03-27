@@ -41,7 +41,20 @@ class PeopleController < ApplicationController
     end
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
   def update
+    @person = Person.find(params[:id])
+    @person.assign_attributes(person_params)
+    if @person.save
+      flash[:notice] = 'Family member updated!'
+      redirect_to user_person_path(current_user.id, @person.id)
+    else
+      flash.now[:errors] = @person.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
