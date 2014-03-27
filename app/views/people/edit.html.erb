@@ -1,0 +1,19 @@
+<h1><%= @for_user ? "Update your info" : "Update Info" %></h1>
+
+<%= form_for [@user, @person] do |f| %>
+
+  <div>
+    <%= f.label "First Name" %>
+    <%= f.text_field :first_name %>
+    <%= f.label "Last Name" %>
+    <%= f.text_field :last_name %>
+    <%= f.label "Gender" %>
+    <%= f.text_field :gender %>
+    <%= f.label "Birthday" %>
+    <%= f.date_field :birthday %>
+    <%= f.label "Living?" %>
+    <%= f.check_box :living %>
+    <!-- <%= f.hidden_field :user_id, value: current_user.id %> -->
+  </div>
+  <%= f.submit "Update" %>
+<% end %>
