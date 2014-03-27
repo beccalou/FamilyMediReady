@@ -27,8 +27,9 @@ FamilyMediReady::Application.routes.draw do
 
   resources :users do
     resources :people do
-    resources :medical_histories
-  end
+      resources :families
+      resources :medical_histories
+    end
   end
 
   devise_scope :user do
