@@ -12,6 +12,22 @@ People
 <ul>
   <li>First Name: <%= person.first_name %></li>
   <li>Last Name: <%= person.last_name %></li>
+
+  <% if person.medical_history %>
+    <div class="panel">
+      <% person.medical_history.attributes.each do |k, v| %>
+        <% if k != "id" && k != "person_id" %>
+          <% if v != false %>
+            <% if v.present? && k == "created_at" || k == "updated_at" %>
+              <li><%= k %> : <%= v %></li>
+            <% elsif %>
+              <li><%= k %></li>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
   <li><%= link_to 'Add Medical History', new_user_person_medical_history_path(@user, person) %></li>
   <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
 </ul>
