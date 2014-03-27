@@ -17,6 +17,11 @@
 <%= f.submit "Add parent role" %>
 <% end %>
 
+<%= form_for [@user, @person] do |f| %>
+<%= f.label :person %>
+<%= collection_select(:person, :id, @people, :id, :full_name) %>
+<% end %>
+
 
 
 
