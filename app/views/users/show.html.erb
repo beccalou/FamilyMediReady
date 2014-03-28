@@ -1,39 +1,35 @@
 <h1>Your Family</h1>
 
-<p><%= @user.email %></p>
-<!-- <p>@user.mother</p>
-<p>@user.father</p> -->
+<div class ="panel panel-default">
+  <div class = "panel-heading">
+  <h3><%=@user.this_person.first_name %> <%= @user.this_person.last_name %></h3>
 
-Current Person
-<h3> <%= @user.this_person.last_name %></h3>
-
-People
 <% @user.people.each do |person| %>
-<ul>
-  <li>First Name: <%= person.first_name.capitalize! %></li>
-  <li>Last Name: <%= person.last_name.capitalize %></li>
-  <% if person.father %>
-    <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
-  <% end %>
-   <% if person.mother %>
-    <li> <%= link_to "Mother: #{person.mother.full_name}", user_person_path(@user, person.mother) %></li>
-  <% end %>
+    <div class = "panel">
+      <ul>
+        <li>First Name: <%= person.first_name.capitalize! %></li>
+        <li>Last Name: <%= person.last_name.capitalize %></li>
+        <% if person.father %>
+          <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
+        <% end %>
+         <% if person.mother %>
+          <li> <%= link_to "Mother: #{person.mother.full_name}", user_person_path(@user, person.mother) %></li>
+        <% end %>
 
-  <% if person.medical_history %>
-    <div class="panel">
-      <% person.medical_history.attributes.each do |k, v| %>
-        <% if k != "id" && k != "person_id" %>
-          <% if v != false %>
-            <% if v.present? && k == "created_at" || k == "updated_at" %>
-              <li><%= k %> : <%= v %></li>
-            <% elsif %>
-              <li><%= k %></li>
+        <% if person.medical_history %>
+            <% person.medical_history.attributes.each do |k, v| %>
+              <% if k != "id" && k != "person_id" %>
+                <% if v != false %>
+                  <% if v.present? && k == "created_at" || k == "updated_at" %>
+                    <li><%= k %> : <%= v %></li>
+                  <% elsif %>
+                    <li><%= k %></li>
+                  <% end %>
+                <% end %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+        </div>
 
     <li><%= link_to 'Edit Profile', edit_user_person_path(@user.id, person.id)%></li>
 
