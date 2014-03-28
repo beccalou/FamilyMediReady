@@ -1,28 +1,14 @@
 <h1>Add Family Relationship for <%= @person.full_name %> </h1>
-
+<p>Are you adding <%= @person.first_name %>'s</p>
 <%= form_for [@user, @person, @family] do |f| %>
-<%= radio_button_tag(:role, "parent_id") %>
-<%= label_tag(:role_parent, "Add a parent or") %>
-<%= radio_button_tag(:role, "child_id") %>
-<%= label_tag(:role_child, "Add a child") %>
+<%= radio_button_tag(:parent_role, "father") %>
+<%= label_tag(:role_of_parent, "Father") %>
+<%= radio_button_tag(:parent_role, "mother") %>
+<%= label_tag(:role_of_parent, "Mother") %>
+
+<%# = f.label :person, "Who is it?" %>
+<%= collection_select(:parent_person, :parent_id, @people, :id, :full_name) %>
 <%= f.submit "Create relationship" %>
+
 <% end %>
-
-
-<%= form_for [@user, @person, @family] do |f| %>
-<%= radio_button_tag(:parent_role, "parent_role") %>
-<%= label_tag(:role_parent, "Father or") %>
-<%= radio_button_tag(:parent_role, "parent_role") %>
-<%= label_tag(:parent_role, "Mother") %>
-<%= f.submit "Add parent role" %>
-<% end %>
-
-<%= form_for [@user, @person] do |f| %>
-<%= f.label :person %>
-<%= collection_select(:person, :id, @people, :id, :full_name) %>
-<% end %>
-
-
-
-
 
