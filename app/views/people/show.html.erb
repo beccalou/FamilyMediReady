@@ -1,18 +1,19 @@
-<h1>Medical History for <%= @person.full_name %></h1>
+<div class="container">
+  <h1>Medical History for <%= @person.full_name %></h1>
 
-<ul>
-    <% @medical_history.attributes.each do |k, v| %>
-      <% if k != "id" && "person" %>
-      <% if v != false %>
-      <% if v.blank? != true %>
-        <li><%= k %> : <%= v %></li>
-    <% end %>
-    <% end %>
-    <% end %>
-    <% end %>
-    </br>
-  </ul>
-
+  <ul>
+      <% @medical_history.attributes.each do |k, v| %>
+        <% if k != "id" && "person" %>
+        <% if v != false %>
+        <% if v.blank? != true %>
+          <li><%= k %> : <%= v %></li>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+      </br>
+    </ul>
+</div>
 
 
 

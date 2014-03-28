@@ -1,4 +1,7 @@
-<h1>Add Family Relationship for <%= @person.full_name %> </h1>
+<div class="container">
+  <div class="panel">
+    <h1>Add Family Relationship for <%= @person.full_name %> </h1>
+  <div>
 <p>Are you adding <%= @person.first_name %>'s</p>
 <%= form_for [@user, @person, @family] do |f| %>
 <%= radio_button_tag(:parent_role, "father") %>
@@ -11,4 +14,5 @@
 <%= f.submit "Create relationship" %>
 
 <% end %>
+</div>
 

@@ -1,4 +1,7 @@
-<h1><%= @for_user ? "Update your info" : "Update Info" %></h1>
+<div class="container">
+  <div class="panel">
+    <h1><%= @for_user ? "Update your info" : "Update Info" %></h1>
+  </div>
 
 <%= form_for [@user, @person] do |f| %>
 
@@ -17,3 +20,4 @@
   </div>
   <%= f.submit "Update" %>
 <% end %>
+</div>

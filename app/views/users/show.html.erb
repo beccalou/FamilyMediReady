@@ -1,50 +1,51 @@
+<div class = "container">
 <h3>Your Family</h3>
 
-<div class ="panel panel-default">
-  <div class = "panel-heading">
-  <h3 class="panel-title"><%=@user.this_person.first_name %> <%= @user.this_person.last_name %></h3>
+    <div class ="panel panel-default">
+    <div class = "panel-heading">
+      <h3 class="panel-title"><%=@user.this_person.first_name %> <%= @user.this_person.last_name %></h3>
 
-<% @user.people.each do |person| %>
-    <div class = "panel">
-      <div class = "panel-body">
-        <ul class="list-unstyled">
-          <li>First Name: <%= person.first_name.capitalize! %></li>
-          <li>Last Name: <%= person.last_name.capitalize %></li>
-          <% if person.father %>
-            <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
-          <% end %>
-           <% if person.mother %>
-            <li> <%= link_to "Mother: #{person.mother.full_name}", user_person_path(@user, person.mother) %></li>
-          <% end %>
+    <% @user.people.each do |person| %>
+      <div class = "panel">
+        <div class = "panel-body">
+          <ul class="list-unstyled">
+            <li>First Name: <%= person.first_name.capitalize! %></li>
+            <li>Last Name: <%= person.last_name.capitalize %></li>
+            <% if person.father %>
+              <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
+            <% end %>
+             <% if person.mother %>
+              <li> <%= link_to "Mother: #{person.mother.full_name}", user_person_path(@user, person.mother) %></li>
+            <% end %>
 
-          <% if person.medical_history %>
-              <% person.medical_history.attributes.each do |k, v| %>
-                <% if k != "id" && k != "person_id" %>
-                  <% if v != false %>
-                    <% if v.present? && k == "created_at" || k == "updated_at" %>
-                      <li><%= k %> : <%= v %></li>
-                    <% elsif %>
-                      <li><%= k %></li>
+            <% if person.medical_history %>
+                <% person.medical_history.attributes.each do |k, v| %>
+                  <% if k != "id" && k != "person_id" %>
+                    <% if v != false %>
+                      <% if v.present? && k == "created_at" || k == "updated_at" %>
+                        <li><%= k %> : <%= v %></li>
+                      <% elsif %>
+                        <li><%= k %></li>
+                      <% end %>
                     <% end %>
                   <% end %>
                 <% end %>
               <% end %>
-            <% end %>
 
 
-      <li><%= link_to 'Edit Profile', edit_user_person_path(@user.id, person.id)%></li>
+        <li><%= link_to 'Edit Profile', edit_user_person_path(@user.id, person.id)%></li>
 
-      <% if person.medical_history.blank? %>
-        <li>
-          <%= link_to('Add Medical History', new_user_person_medical_history_path(@user, person) )%>
-        </li>
-      <% else %>
-        <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
-        <li><%= link_to 'Edit Medical History', edit_user_person_medical_history_path(@user, person.id,
-    person.medical_history.id)%></li>
-      <% end %>
-      <li><%= link_to 'Add a new relationship', new_user_person_family_path(@user, person.id) %> </li>
-      </ul>
+        <% if person.medical_history.blank? %>
+          <li>
+            <%= link_to('Add Medical History', new_user_person_medical_history_path(@user, person) )%>
+          </li>
+        <% else %>
+          <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
+          <li><%= link_to 'Edit Medical History', edit_user_person_medical_history_path(@user, person.id,
+      person.medical_history.id)%></li>
+        <% end %>
+        <li><%= link_to 'Add a new relationship', new_user_person_family_path(@user, person.id) %> </li>
+        </ul>
     </div>
   </div>
 
@@ -53,3 +54,4 @@
 <ul>
   <li><%= link_to 'Add a new person', new_user_person_path(current_user.id) %></li>
 </ul>
+</div>

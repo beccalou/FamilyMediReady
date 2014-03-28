@@ -1,49 +1,53 @@
-<h1>Update Medical History</h1>
+<div class="container">
+<div class="panel">
+  <h1>Update Medical History</h1>
+</div>
 
 
 <%= form_for [@user, @person, @medical_history] do |f| %>
 
-  <div>
     <%= f.label "Arthritis" %>
-    <%= f.check_box :arthritis %>
+    <p><%= f.check_box :arthritis %></p>
     <%= f.label "Birth Defects" %>
-    <%= f.check_box :birth_defects %>
+    <p><%= f.check_box :birth_defects %></p>
     <%= f.label "Depression" %>
-    <%= f.check_box :depression %>
+    <p><%= f.check_box :depression %></p>
     <%= f.label "Diabetes" %>
-    <%= f.check_box :diabetes %>
+    <p><%= f.check_box :diabetes %></p>
     <%= f.label "Cancer" %>
-    <%= f.check_box :cancer %>
+    <p><%= f.check_box :cancer %></p>
     <%= f.label "Cancer Type, if any" %>
-    <%= f.text_field :cancer_type %>
+    <p><%= f.text_field :cancer_type %></p>
     <%= f.label "Hearing Loss" %>
-    <%= f.check_box :hearing_loss %>
+    <p><%= f.check_box :hearing_loss %></p>
     <%= f.label "Heart Disease" %>
-    <%= f.check_box :heart_disease %>
+    <p><%= f.check_box :heart_disease %></p>
     <%= f.label "Vision Problems" %>
-    <%= f.check_box :vision_problems %>
+    <p><%= f.check_box :vision_problems %></p>
     <%= f.label "High Cholesterol" %>
-    <%= f.check_box :high_cholesterol %>
+    <p><%= f.check_box :high_cholesterol %></p>
     <%= f.label "High Blood Pressure" %>
-    <%= f.check_box :high_blood_pressure %>
+    <p><%= f.check_box :high_blood_pressure %></p>
     <%= f.label "Infertility" %>
-    <%= f.check_box :infertility %>
+    <p><%= f.check_box :infertility %></p>
     <%= f.label "Mental Retardation" %>
-    <%= f.check_box :mental_retardation %>
+    <p><%= f.check_box :mental_retardation %></p>
     <%= f.label "Obesity" %>
-    <%= f.check_box :obesity %>
+    <p><%= f.check_box :obesity %></p>
     <%= f.label "Osteoporosis" %>
-    <%= f.check_box :osteoporosis %>
+    <p><%= f.check_box :osteoporosis %></p>
     <%= f.label "Stroke" %>
-    <%= f.check_box :stroke %>
+    <p><%= f.check_box :stroke %></p>
     <%= f.label "Vision Loss" %>
-    <%= f.check_box :vision_loss %>
+    <p><%= f.check_box :vision_loss %></p>
     <%= f.label "Allergies" %>
-    <%= f.text_field :allergic_to %>
+    <p><%= f.text_field :allergic_to %></p>
     <%= f.label "Past Medication" %>
-    <%= f.check_box :past_meds %>
+    <p><%= f.check_box :past_meds %></p>
     <%= f.label "Current Medications" %>
-    <%= f.text_field :current_meds %>
-  </div>
+    <p><%= f.text_field :current_meds %></p>
+
+
   <%= f.submit "Update" %>
 <% end %>
+</div>
