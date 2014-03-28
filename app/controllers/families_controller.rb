@@ -32,7 +32,9 @@ class FamiliesController < ApplicationController
 private
 
   def family_params
-    params.require(:family).permit(:parent_id, :child_id, :parent_role)
+    #params.require(:parent_person).permit(:parent_id)
+    # params.permit(:person_id)
+    {parent_id: params[:parent_person][:parent_id], child_id: params[:person_id], parent_role: params[:parent_role]}
   end
 
 end

@@ -12,6 +12,12 @@ People
 <ul>
   <li>First Name: <%= person.first_name.capitalize! %></li>
   <li>Last Name: <%= person.last_name.capitalize %></li>
+  <% if person.father %>
+    <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
+  <% end %>
+   <% if person.mother %>
+    <li> <%= link_to "Mother: #{person.mother.full_name}", user_person_path(@user, person.mother) %></li>
+  <% end %>
 
   <% if person.medical_history %>
     <div class="panel">
