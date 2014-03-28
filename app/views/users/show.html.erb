@@ -9,7 +9,7 @@
       <div class = "panel">
         <div class = "panel-body">
           <ul class="list-unstyled">
-            <li>First Name: <%= person.first_name.capitalize! %></li>
+            <li>First Name: <%= person.first_name.capitalize %></li>
             <li>Last Name: <%= person.last_name.capitalize %></li>
             <% if person.father %>
               <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
