@@ -5,10 +5,9 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<header>
+<header id="page-header">
   <div class ="container">
   <h3>
     <%if user_signed_in?%>
@@ -18,7 +17,7 @@
       <%= link_to 'Sign up', new_user_registration_path%>
     <%end%>
   </h3>
-  <h3 id="appname">FamilyMediReady</h3>
+  <h1 class="jumbotron">FamilyMediReady</h1>
   </div>
 </header>
 <%= yield %>
