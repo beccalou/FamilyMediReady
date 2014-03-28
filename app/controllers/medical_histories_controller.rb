@@ -17,7 +17,7 @@ class MedicalHistoriesController < ApplicationController
 
     if @medical_history.save
       flash[:notice] = 'Added a new medical history!'
-      redirect_to user_path(current_user.id)
+      # redirect_to user_path(current_user.id)
     else
       flash.now[:errors] = @medical_history.errors.full_messages
       render :new

@@ -20,7 +20,7 @@
     <div class = "jumbotron">
      <h1>Family</h1>
      <h1>Medi</h1>
-     <h1><a href="user_path"> Ready </a></h1>
+     <h1><%= link_to "Ready", user_path(current_user.id)%></h1>
      <p class="text primary">You can't prevent what you can't predict-- track you family's medical history</p>
     </div>
   </div>
