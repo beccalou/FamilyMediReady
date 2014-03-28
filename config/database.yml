@@ -54,4 +54,4 @@ production:
   encoding: unicode
   database: FamilyMediReady_production
   pool: 5
-  host: 'localhost'
+
