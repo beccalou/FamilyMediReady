@@ -20,8 +20,12 @@
     <div class = "jumbotron">
      <h1>Family</h1>
      <h1>Medi</h1>
-     <h1>Ready</h1>
-     <p class="text primary">You can't prevent what you can't predict-- track you family's medical history</p>
+     <%if user_signed_in?%>
+      <h1><%= link_to "Ready", user_path %></h1>
+     <%else%>
+      <h1><%=link_to "Ready", new_user_sign_in_path%></h1>
+     <% end %>
+     <p class="text primary">You can't prevent what you can't predict-- track your family's medical history</p>
     </div>
   </div>
 </header>
