@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 <header id="page-header">
@@ -19,21 +20,19 @@
   </h3>
     <div class = "jumbotron">
      <h1>Family</h1>
-     <h1>Medi</h1>
+     <h1>Medi&nbsp<i class="fa fa-stethoscope"></i></h1>
      <%if user_signed_in?%>
       <h1><%= link_to "Ready", user_path(current_user.id) %></h1>
      <%else%>
-      <h1><%=link_to "Ready", new_user_sign_in_path(current_user.id)%></h1>
+      <h1><%=link_to "Ready", new_user_session_path %></h1>
      <% end %>
      <p class="text primary">You can't prevent what you can't predict-- track your family's medical history</p>
     </div>
   </div>
 </header>
 <%= yield %>
-
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
 
 </body>
 </html>
