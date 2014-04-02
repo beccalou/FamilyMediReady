@@ -21,7 +21,7 @@
             <% if person.medical_history %>
                 <% person.medical_history.attributes.each do |k, v| %>
                   <% if k != "id" && k != "person_id" %>
-                    <% if v != false %>
+                    <% if v.present? == true && v != false && v!= "0" %>
                       <% if v.present? && k == "created_at" || k == "updated_at" %>
                         <li><%= k %> : <%= v %></li>
                       <% elsif %>
