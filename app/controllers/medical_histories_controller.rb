@@ -38,15 +38,16 @@ class MedicalHistoriesController < ApplicationController
 
   def update
     @medical_history = MedicalHistory.find(params[:id])
+    @medical_history.assign_attributes(medical_history_params)
     @person = Person.find(params[:person_id])
     @user = current_user
-      if @medical_history.save
-        flash[:notice] = 'Medical History updated!'
-        redirect_to user_path(current_user.id)
-      else
-        flash.now[:errors] = @medical_history.errors.full_messages
-        render :new
-      end
+    if @medical_history.save
+      flash[:notice] = 'Medical History updated!'
+      redirect_to user_path(current_user.id)
+    else
+      flash.now[:errors] = @medical_history.errors.full_messages
+      render :new
+    end
   end
 
   def destroy
