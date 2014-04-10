@@ -9,8 +9,7 @@
       <div class = "panel">
         <div class = "panel-body">
           <ul class="list-unstyled">
-            <li>First Name: <%= person.first_name.capitalize %></li>
-            <li>Last Name: <%= person.last_name.capitalize %></li>
+            <li><%= person.first_name.capitalize %> <%= person.last_name.capitalize %></li>
             <% if person.father %>
               <li> <%= link_to "Father: #{person.father.full_name}", user_person_path(@user, person.father) %></li>
             <% end %>
@@ -23,9 +22,9 @@
                   <% if k != "id" && k != "person_id" %>
                     <% if v.present? == true && v != false && v!= "0" %>
                       <% if v.present? && k == "created_at" || k == "updated_at" %>
-                        <li><%= k %> : <%= v %></li>
+                        <li class="medical-attributes"><%= k.capitalize %> : <%= v %></li>
                       <% elsif %>
-                        <li><%= k %></li>
+                        <li class="medical-attributes"><%= k.capitalize %></li>
                       <% end %>
                     <% end %>
                   <% end %>
@@ -40,7 +39,9 @@
             <%= link_to('Add Medical History', new_user_person_medical_history_path(@user, person) )%>
           </li>
         <% else %>
-          <li><%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
+          <!-- <li><button class='show-medical' data-id="<%=person.id %>">Show medical history</button>
+          <ul id="show-medical-contents-<%=person.id %>"></ul> -->
+          <%= link_to 'Show medical history', user_person_path(@user.id, person.id) %></li>
           <li><%= link_to 'Edit Medical History', edit_user_person_medical_history_path(@user, person.id,
       person.medical_history.id)%></li>
         <% end %>

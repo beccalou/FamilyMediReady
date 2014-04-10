@@ -23,4 +23,5 @@ class Person < ActiveRecord::Base
     mother_array = parents.where(parent_role: 'mother')
     mother_array.first.parent if !mother_array.empty?
   end
+
 end
