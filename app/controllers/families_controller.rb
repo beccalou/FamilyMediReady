@@ -29,6 +29,18 @@ class FamiliesController < ApplicationController
   def destroy
   end
 
+  def get_medical_history
+    medical_history = {}
+    id = params[:person_id].to_i
+    person = Person.find(id)
+    medical = person.medical_history
+    medical.attributes.each do |k, v|
+      if v == true
+        medical_history[k] = v
+      end
+    end
+    render json: {medicalHistory: medical_history, id: id}
+  end
 private
 
   def family_params
