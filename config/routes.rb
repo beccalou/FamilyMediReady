@@ -23,6 +23,7 @@ FamilyMediReady::Application.routes.draw do
   # get "family/show"
   # get "family/update"
   # get "family/destroy"
+  get 'get_medical_history', to: 'families#get_medical_history'
   devise_for :users
 
   resources :users do
